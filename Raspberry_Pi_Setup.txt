@@ -1,0 +1,29 @@
+sudo raspi-config
+
+sudo apt-get update && sudo apt-get upgrade -y
+sudo rpi-update
+sudo reboot
+
+
+sudo apt-get install dialog pv tk
+sudo apt-get install arduino python2.7 python python-pip python2-pip python2-pexpect
+sudo pip install scipy && sudo pip install pyserial
+sudo apt-get install apache2 lua5.2 php5 mysql-server nodejs node bower gcc gfortran gparted wiringpi  
+sudo apt-get install libx264 alsa-base alsa-tools alsa-utils alsaplayer-common alsaplayer-daemon alsaplayer-text audacity libaacs-dev libaacs0 audacity-data libflac++6 libportsmf0 libsbsms10 libsoxr0 libtwolame0 libvamp-hostsdk3 libwxbase3.0-0 libwxgtk3.0-0
+
+sudo aptitude full-upgrade -y
+sudo apt-get update && sudo reboot
+
+cd Downloads
+mkdir Audio_Programs && cd Audio_Programs
+git clone git://source.ffmpeg.org/ffmpeg.git
+cd ffmpeg
+./configure --enable-gpl --enable-libx264 --enable-nonfree --enable-libaacplus --extra-cflags="-I/my/path/were/i/keep/built/arm/stuff/include" --extra-ldflags="-L/my/path/were/i/keep/built/arm/stuff/lib" --extra-libs=-ldl
+make
+make install
+
+
+
+
+
+
